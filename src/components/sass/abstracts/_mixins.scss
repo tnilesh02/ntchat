@@ -1,0 +1,74 @@
+@mixin clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+ 
+@mixin absCenter {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@mixin compatible-flex {
+	-ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+}
+
+// MEDIA QUERY MANAGER
+/*
+0 - 320px: 		mobile-s
+320 - 375px: 	mobile-m
+375 - 425px		mobile-l
+425 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+
+@mixin respond($breakpoint) {
+	@if $breakpoint == mobile-s {
+		 @media handheld,screen and (max-width: 21em) { @content };  // mobile-s
+	}
+
+	@if $breakpoint == mobile-m {
+		 @media handheld,screen and (max-width: 23.5em) { @content };  // mobile-m
+	}
+
+	@if $breakpoint == mobile-l {
+		 @media handheld,screen and (max-width: 26.6em) { @content };  // mobile-l
+	}
+
+	@if $breakpoint == phone {
+		 @media handheld,screen and (max-width: 37.5em) { @content };  // Phone
+	}
+
+	@if $breakpoint == tab-port {
+		 @media handheld,screen and (max-width: 56.25em) { @content }; // tab-port
+	}
+
+	@if $breakpoint == tab-land {
+		 @media handheld,screen and (max-width: 75em) { @content };    // tab-land
+	}
+
+	@if $breakpoint == big-desktop {
+		 @media handheld,screen and (min-width: 112.5em) { @content }; // big-desktop
+	}
+}

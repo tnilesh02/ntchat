@@ -1,0 +1,42 @@
+.chatbox {
+
+	border-bottom: solid 3px $color-grey-light;
+	padding: 1.5rem 1rem 1rem 1rem;
+	
+
+	&:hover,
+	&:active {
+		background-color: $color-grey-light;
+	}
+
+	&__link {
+		text-decoration: none;
+		color: black;
+	}
+
+	&__top {
+
+	}
+
+	&__with {
+		display: inline-block;
+		font-size: 3.5rem;
+		font-weight: 600;
+	}
+
+	&__time {
+		float: right;
+		display: inline-block;
+		font-size: 2.5rem;
+		color: rgba($color-black, .7);
+	}
+
+	&__bottom {
+		padding: 0rem .5rem;
+	}
+
+	&__last-text {
+		font-size: 2.5rem;
+		color: rgba($color-black, .7);
+	}
+}

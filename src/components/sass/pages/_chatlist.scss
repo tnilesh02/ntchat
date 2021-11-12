@@ -1,0 +1,6 @@
+.chatlist {
+	height: calc(100vh - 8rem);
+	background-color: $color-white;
+	width: 100vw;
+	overflow-y: scroll;
+}

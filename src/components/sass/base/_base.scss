@@ -1,0 +1,58 @@
+* ,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+html {
+	font-size: 62.5%; // 1rem is 10px
+	scrollbar-width: none;
+
+	@include respond(big-desktop) {
+		font-size: 75%;				// 1rem = 12px
+	}
+
+	@include respond(tab-land) {
+		font-size: 56.25%;			// 1rem = 9px
+	}
+
+	@include respond(tab-port) {
+		font-size: 50%;				// 1rem = 8px
+	}
+
+	@include respond(phone) {
+		font-size: 40%;
+	}
+}
+
+body {
+	line-height: 1.6;
+	padding: 0%;
+	background-color: white;
+	box-sizing: border-box;
+	font-family: "Poppins";
+	min-height: 100%;
+
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: white;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #D0D3D0;
+}

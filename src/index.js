@@ -1,13 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// styles
+import './components/sass/main.scss';
+
+//pages
+import Homepage from './components/pages/homepage.jsx';
+import Otp from './components/pages/otp.jsx';
+import ChatList from './components/pages/chatlist.jsx';
+import ChatPage from './components/pages/_chatpage.jsx';
+
+// for navigation
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
+
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+  <Routes>
+    <Route path="/" element={<Homepage />} />
+    <Route path="/otp" element={<Otp />} />
+    <Route path="/chat-list" element={<ChatList />} />
+    <Route path="/chat-page" element={<ChatPage />} />
+  </Routes>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
